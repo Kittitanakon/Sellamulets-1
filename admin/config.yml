@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main  # เปลี่ยนเป็น branch ของคุณ (เช่น master ถ้าใช้ master)
+
+media_folder: "images"  # โฟลเดอร์ที่เก็บรูปภาพ (ตรงกับที่เว็บคุณใช้)
+public_folder: "/images"  # เส้นทางที่ใช้ในหน้าเว็บ
+
+collections:
+  - name: "items"  # ชื่อคอลเลกชัน
+    label: "พระเครื่อง"  # ชื่อที่แสดงใน UI
+    folder: "_items"  # โฟลเดอร์เก็บไฟล์ Markdown
+    create: true  # อนุญาตให้สร้างรายการใหม่
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"  # รูปแบบชื่อไฟล์ (เช่น 2025-05-09-item-1)
+    fields:  # ฟิลด์ที่สามารถแก้ไขได้
+      - {label: "ชื่อหลวงพ่อ/วัด", name: "monkTemple", widget: "string", required: false}
+      - {label: "รุ่น/เนื้อพระเครื่อง", name: "material", widget: "string", required: false}
+      - {label: "รายละเอียด", name: "year", widget: "string", required: false}
+      - {label: "ราคาขาย (บาท)", name: "price", widget: "number", required: false}
+      - {label: "ค่าจัดส่ง (บาท)", name: "shipping", widget: "number", required: false}
+      - {label: "ชื่อแชท Messenger ผู้ขาย", name: "sellerId", widget: "string", required: false}
+      - {label: "เบอร์ติดต่อ", name: "phone", widget: "string", required: false}
+      - {label: "รูปภาพที่ 1", name: "image1", widget: "image", required: false}
+      - {label: "รูปภาพที่ 2", name: "image2", widget: "image", required: false}
