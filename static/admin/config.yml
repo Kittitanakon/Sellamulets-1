@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: your-username/your-repo
+  branch: main
+media_folder: "images"                  # โฟลเดอร์ที่เก็บรูปภาพ
+public_folder: "/images"                # path สำหรับเรียกใช้รูปภาพในเว็บ
+collections:
+  - name: "auctions"
+    label: "Auctions"
+    folder: "content/auctions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Starting Price", name: "price", widget: "number" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Publish Date", name: "date", widget: "datetime" } 
